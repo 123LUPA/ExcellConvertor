@@ -19,7 +19,7 @@ import java.nio.file.Paths;
 public class UploadController {
 
     //Save the uploaded file to this folder
-    private static String UPLOADED_FOLDER = "C:\\Users\\Palko\\Desktop\\ExampleCamel&Mq\\src\\main\\java\\com\\example\\ExampleCamel\\Mq\\Files\\";
+    private static String UPLOADED_FOLDER = "C:\\Users\\Palko\\Desktop\\ExcellConvertor\\src\\main\\java\\com\\example\\ExampleCamel\\Mq\\Files\\";
 
     @GetMapping("/")
     public String index() {
@@ -72,7 +72,7 @@ public class UploadController {
             @Override
             public void configure() throws Exception
             {
-                from("file:C:\\Users\\Palko\\Desktop\\ExampleCamel&Mq\\src\\main\\java\\com\\example\\ExampleCamel\\Mq\\Output?fileName=user.xml").to("activemq:lala");
+                from("file:src\\main\\java\\com\\example\\ExampleCamel\\Mq\\Output?fileName=user.xml").to("activemq:user");
             }
 
         });

@@ -18,11 +18,11 @@ public class ConvertorRoute implements RoutesBuilder {
             public void configure() {
                 try {
                     DataFormat bindy = new BindyCsvDataFormat(Student.class);
-                    from("file:C:\\Users\\Palko\\Desktop\\ExampleCamel&Mq\\src\\main\\java\\com\\example\\ExampleCamel\\Mq\\Files").
+                    from("file:src\\main\\java\\com\\example\\ExampleCamel\\Mq\\Files").
                             unmarshal(bindy).
                             marshal().
                             xstream().
-                            to("file:C:\\Users\\Palko\\Desktop\\ExampleCamel&Mq\\src\\main\\java\\com\\example\\ExampleCamel\\Mq\\Output?fileName=user.xml");
+                            to("file:src\\main\\java\\com\\example\\ExampleCamel\\Mq\\Output?fileName=user.xml");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
