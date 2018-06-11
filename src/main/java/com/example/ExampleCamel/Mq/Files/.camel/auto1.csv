@@ -1,0 +1,7 @@
+userID,active,email,lastName,name,password
+1,1,student1@email.com,Sveding,Jen,password
+2,1,student2@email.com,Kazlauskas,Edgaras,password
+3,1,student3@email.com,Palkovicova,Lucia,password
+4,1,student4@email.com,Bhuiyan,Saiful,password
+5,1,teacher1@email.com,Henning,Henning,password
+6,1,admin1@email.com,Flemming,Flemming,password

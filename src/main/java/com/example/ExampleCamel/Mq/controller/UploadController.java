@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -19,7 +20,7 @@ import java.nio.file.Paths;
 public class UploadController {
 
     //Save the uploaded file to this folder
-    private static String UPLOADED_FOLDER = "C:\\Users\\Palko\\Desktop\\ExcellConvertor\\src\\main\\java\\com\\example\\ExampleCamel\\Mq\\Files\\";
+    private static String UPLOADED_FOLDER = ".\\src\\main\\java\\com\\example\\ExampleCamel\\Mq\\Files\\";
 
     @GetMapping("/")
     public String index() {
@@ -67,12 +68,16 @@ public class UploadController {
 
 
     public void sendData(CamelContext context) throws Exception {
+
+        System.out.println("here");
         context.addRoutes(new RouteBuilder()
         {
             @Override
             public void configure() throws Exception
             {
                 from("file:src\\main\\java\\com\\example\\ExampleCamel\\Mq\\Output?fileName=user.xml").to("activemq:user");
+
+
             }
 
         });
